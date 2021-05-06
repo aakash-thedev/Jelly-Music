@@ -1,0 +1,631 @@
+body{
+	background-color: black;
+	margin: 0px !important;
+	padding: 0px !important;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading{
+	color: white;
+	margin-left: 10%;
+	font-family: sans-serif;
+	/*font-size: 1.8rem;*/
+}
+
+.heading:hover{
+	text-decoration: underline;
+	transition: text-decoration 0.5s;
+	cursor: pointer;
+}
+
+
+										/* Create CSS for application box the main box inside which the app will be */
+
+.application-box{
+	margin: auto;
+	/*background-color: #0c1027;*/
+	background-color: #18181c;
+	width: 75%;
+	height: auto;
+	padding-bottom: 5%;
+}
+
+									/* Make navbar flex */
+
+.navbar{
+	/*background-color: #0c1027;*/
+	background-color: #222226;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+									/* Left Portion CSS */
+
+.logo{
+	font-size: 2.5rem;
+	color: white;
+}
+
+.left-list{
+	display: flex;
+	list-style: none;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.left-list li{
+	display: inline-block;
+	text-decoration: none;
+}
+
+.left-list li a{
+	text-decoration: none;
+	margin-left: 3.5rem;
+	color: white;
+	font-size: small;
+}
+
+.left-list li a:hover{
+	border-bottom: 1px solid white;
+	color: grey;
+}
+
+
+
+									/* Right Portion CSS */
+
+.right-list{
+	display: flex;
+	list-style: none;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.right-list li{
+	display: inline-block;
+	text-decoration: none;
+}
+
+.right-list li:nth-child(2n){
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+.right-list li img{
+	height: 45px;
+	width: auto;
+	border-radius: 50%;
+	margin-right: 3rem;
+}
+
+.right-list li input{
+	padding-left: 70px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-radius: 10px;
+	/*background-color: #101948;*/
+	background-color: #222226;
+	color: lightgrey;
+	/*border: 0.5px solid #101948;*/
+	border: 0.5px solid grey;
+
+}
+
+.fa-search{
+	position: absolute;
+	color: white;
+	margin-top: 8px;
+	margin-left: 8px;
+}
+
+.fa-microphone{
+	position: absolute;
+	color: white;
+	margin-top: 8px;
+	margin-left: -20px;
+}
+
+.right-list li .fa-bell{
+	color: white;
+	font-size: 1.5rem;
+}
+
+										/* media quries for navbar */
+
+@media screen and (max-width: 1200px){
+
+	.application-box{
+		margin: auto;
+		/*background-color: #0c1027;*/
+		background-color: #18181c;
+		width: 90%;
+		height: auto;
+		padding-bottom: 5%;
+	}
+}
+
+@media screen and (max-width: 1000px){
+
+	.application-box{
+		margin: auto;
+		/*background-color: #0c1027;*/
+		background-color: #18181c;
+		width: 97%;
+		height: auto;
+		padding-bottom: 5%;
+	}
+}
+
+@media screen and (max-width: 828px){
+
+	.application-box{
+		margin: auto;
+		/*background-color: #0c1027;*/
+		background-color: #18181c;
+		width: 95%;
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 672px){
+
+	.application-box{
+		margin: auto;
+		/*background-color: #0c1027;*/
+		background-color: #18181c;
+		width: 100%;
+		height: auto;
+	}
+
+	.navbar-left-portion{
+		margin-top: -12px;
+		margin-left: -40px;
+		flex-grow: 1;
+	}
+
+	.left-list li a{
+		position: absolute;
+		visibility: hidden;
+	}
+
+	.left-list li img{
+		height: 50px;
+		width: auto;
+	}
+
+	.navbar-right-portion{
+		flex-grow: 9;
+	}
+
+	.right-list{
+		justify-content: flex-start;
+	}
+
+	.right-list li:nth-child(2n){
+		margin-right: 5%;
+		margin-left: 12%;
+	}
+
+	.right-list li input{
+		padding-left: 80px;
+		padding-right: 75px;
+		text-align: center;
+	}
+
+	.right-list li .fa-bell{
+		color: white;
+		font-size: 1.4rem;
+	}
+
+	.right-list li img{
+		height: 35px;
+		width: auto;
+	}
+}
+
+													/* Music Timeline CSS*/
+
+.music-timeline{
+	margin-top: 20px;
+	width: 100%;
+}
+
+							/*music timeline has two flex component head-timeline*/
+
+.head-timeline{
+	display: inline-block;
+	position: relative;
+	width: 74.2%;
+	height: 85vh;
+	/*background-color: cyan;*/
+	box-sizing: border-box;
+}
+
+		#selected-genre-song-list{
+			margin-top: 10%;
+		}
+
+
+		.song-cover{
+			margin: auto;
+			height: 40%;
+			width: 60%;
+			overflow: hidden;
+		}
+
+		.song-cover img{
+			float: left;
+			height: 100%;
+			width: auto;
+			padding-right: 20px;
+		}
+
+		#album{
+			color: grey;
+			font-size: smaller;
+		}
+
+		.song-cover a{
+			text-decoration: none;
+			color: white;
+		}
+
+		.album-heading{
+			margin-top: 0%;
+		}
+
+		.album-heading:hover{
+			text-decoration: 0.5px underline;
+		}
+
+		#by{
+			color: grey;
+			font-size: smaller;
+		}
+
+		.album-artist{
+			color: white;
+			font-size: smaller;
+		}
+
+		.year-of-release{
+			margin-top: 0.5rem;
+			margin-bottom: 1rem;
+			display: block;
+			color: white;
+			font-size: smaller;
+		}
+
+		.to-do-options{
+			display: flex;
+			align-items: center;
+		}
+
+		.to-do-options button{
+			background-color: aqua;
+			border: none;
+			height: 40px;
+			width: 30%;
+			border-radius: 20px;
+			font-weight: bold;
+			margin-right: 1rem;
+			cursor: pointer;
+		}
+
+		.to-do-options .fa-heart, .fa-ellipsis-h{
+			font-size: 1.5rem;
+			margin-right: 2.5rem;
+		}
+
+		.song-item-bar{
+			display: flex;
+			height: 40px;
+			width: 99.7%;
+			border-bottom: 0.2px solid black;
+			background-color: #222226;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.song-item-bar:hover{
+			background-color: #434349;
+		}
+
+		.song-info{
+			height: 100%;
+			width: 60%;
+		}
+
+		.song-info a{
+			color: white;
+			text-decoration: none;
+			margin-right: 50px;
+		}
+
+		.song-info a:hover{
+			border-bottom: 1px solid white;
+		}
+
+		.song-info span{
+			font-size: small;
+			color: grey;
+		}
+
+		.other-options{
+			font-size: smaller;
+			height: 100%;
+			width: 17%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		.other-options a{
+			color: white;
+			text-decoration: none;
+		}
+	
+	
+
+
+
+							/*and*/
+
+.queue{
+	position: static;
+	display: inline-block;
+	width: 25%;
+	box-sizing: border-box;
+	height: 77.8vh;
+	/*background-color: #0b1133;*/
+	overflow-y: scroll;
+	scrollbar-width: none;
+}
+
+.queue::-webkit-scrollbar {
+	box-sizing: border-box;
+	flex-grow: 2;
+	height: 84vh;
+	background-color: #222226;
+	/*background-color: #0b1133;*/
+  	display: none;
+}
+
+
+#queue-heading{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	color: white;
+	box-sizing: border-box;
+	position: sticky;
+	top: -1px;
+	background-color: #222226;
+	/*background-color: #0b1133;*/
+}
+
+#queue-heading p{
+	color: aqua;
+	font-size: x-small;
+	margin-top: 22px;
+}
+
+.queue-item{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: white;
+	box-sizing: border-box;
+	margin-left: -10%;
+}
+
+.count{
+	margin-right: 15px;
+	margin-bottom: 20px;
+	color: white;
+}
+
+.song-details{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	overflow: hidden;
+	/*margin-left: -30px;*/
+}
+
+.info{
+	margin-left: 5%;
+}
+
+.song-details .song-icon{
+	/*margin-right: 7px;*/
+}
+
+.song-name{
+	margin-bottom: -5px;
+	width: 100%;
+	padding-right: 10px;
+}
+
+.singer-name{
+	font-size: smaller;
+	color: grey;	
+	width: 100%;
+	padding-right: 10px;
+}
+
+												/*Media Query for Queue section*/
+
+@media screen and (max-width: 896px){
+	.count{
+		visibility: hidden;
+	}
+
+	.song-details{
+		font-size: smaller;
+		display: flex;
+		justify-content: space-around;
+		align-items: flex-end;
+	}
+
+	.fa-heart{
+		font-size: smaller;
+	}
+}
+
+@media screen and (max-width: 636px){
+	.head-timeline{
+		width: 100%;
+	}
+
+	.queue{
+		width: 100%;
+	}
+
+	.count{
+		visibility: initial;
+		margin-right: 15px;
+		margin-bottom: 20px;
+		color: white;
+	}
+
+	.song-details{
+		font-size: smaller;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		/*margin-left: -30px;*/
+	}
+}
+
+/* Music Player Section*/
+
+
+#music-player-section{
+	/*visibility: hidden;*/
+	background-color: #282828;
+	height: 80px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 92vh;
+	opacity: 1;
+	position: fixed;
+	bottom: 0px;
+	z-index: 10;
+}
+
+#song-thumbnail{
+	height: 100%;
+	width: 20%;
+	/*border: 1px solid white;*/
+	display: flex;
+	align-items: center;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+			
+			#song-thumbnail img{
+				height: 100%;
+				width: auto;
+			}
+
+			#song-thumbnail a{
+				text-decoration: none;
+			}
+
+			#song-thumbnail ul{
+				margin-left: -8%;
+				padding-bottom: 2px;
+			}
+
+			.current-song-name a{
+				font-size: larger;
+				color: white;
+			}
+
+			.current-song-name a:hover{
+				border-bottom: 1px solid white;
+			}
+
+			.current-singer a{
+				font-size: small;
+				color: grey;
+			}
+
+			.current-singer a:hover{
+				border-bottom: 1px solid white;
+			}
+
+			.fa-heart{
+				margin-left: 21%;
+				font-size: smaller;
+				color: white;
+			}
+
+
+#media-controls{
+	height: 100%;
+	width: 60%;
+	/*border: 1px solid white;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+			#controls{
+				margin-top: 0.70rem;
+				width: 50%;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+			}
+
+			#controls i{
+				color: white;
+			}
+
+			#controls a:hover i{
+				color: white;
+			}
+
+			.fa-play-circle{
+				font-size: 2rem;
+			}
+
+			#media-controls #progress-bar{
+				height: 0px;
+				width: 75%;
+				border: 2px solid white;
+			}
+
+#other-utilities{
+	height: 100%;
+	width: 20%;
+	/*border: 1px solid white;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+			
+			#other-utilities a{
+				text-decoration: none;
+				margin-right: 5%;
+			}
+
+			#other-utilities i{
+				color: white;
+				font-size: smaller;
+			}
+
+			#volume-bar{
+				height: 0px;
+				width: 40%;
+				border: 1px solid white;
+			}

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selected Song</title>
+
+	<link rel="stylesheet" type="text/css" href="jabwemet.css">
+	<meta charset="utf-8" name="author" content="Aakash Srivastava">
+	<meta charset="utf-8" name="keywords" content="music player, music, online music, jelly player">
+	<meta name="viewport" content="width=device-width initial-scale:1">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+
+</head>
+<body>
+
+								<!-- This is the section of music player that will be 90vh from top fixed on screen.-->
+
+	<section id="music-player-section">
+
+			<span id="song-thumbnail">
+
+				<img src="cover/att.jpeg">
+				<ul style="list-style: none;">
+					<li class="current-song-name"><a href="">Attention</a></li>
+					<li class="current-singer"><a href="">Charlie puth</a></li>
+				</ul>
+				<i class="far fa-heart"> </i>
+
+			</span>
+
+			<span id="media-controls">
+				<div id="controls">
+					<a href=""><i class="fas fa-random"></i></a>
+					<a href=""><i class="fas fa-step-backward"></i></a>
+					<a href=""><i class="far fa-play-circle"></i></a>
+					<a href=""><i class="fas fa-step-forward"></i></a>
+					<a href=""><i class="fas fa-redo"></i></a>
+				</div>
+
+				<div id="progress-bar"></div>
+			</span>
+
+			<span id="other-utilities">
+				<a href=""><i class="fas fa-server"></i></a>
+				<a href=""><i class="fas fa-desktop"></i></a>
+				<a href=""><i class="fas fa-volume-up"></i> </a>
+				<span id="volume-bar"></span>
+			</span>
+			
+	</section>
+
+	<main class="application-box">
+
+		
+		<!-- Our very first target will be to make a navbar as a flex-display containing two divisions one for logo and Favourites and another for search bar and etc . Both will be
+		space-between justified ! -->
+
+		<nav class="navbar">
+
+			<div class="navbar-left-portion">
+
+				<ul class="left-list">
+
+					<li><i class="fas fa-headphones-alt logo"></i></li>
+					<li><a href="#favourites"> Favourites </a></li>
+					
+				</ul>
+				
+			</div>
+
+			<div class="navbar-right-portion">
+
+				<ul class="right-list">
+					<li>
+						<form method="POST" name="search-query">
+
+							<div class="search-division">
+
+								<i class="fas fa-search"></i>
+								<input type="text" name="name" id="music-search" placeholder="Search Music">
+								<i class="fas fa-microphone"></i>
+								
+							</div>
+
+						</form>
+					</li>
+
+					<!-- <li><input type="text" name="name" id="music-search" placeholder="Search Music"></li> -->
+					<li><i class="fa fa-bell"></i></li>
+					<li><img src="images/profile.jpg"></li>
+
+				</ul>
+				
+			</div>
+		</nav>
+
+		<!-- Now the turn is for music section and aside Queue section both will be in a div which will be flex overall so that we can handle them easily -->
+
+		<div class="music-timeline">
+			
+			<div class="head-timeline">
+
+				<div class="song-cover">
+					<img src="song covers/jabwemet.jpg">
+
+					<span id="album">ALBUM</span>
+
+					<a href=""><h2 class="album-heading">Jab We Met</h2></a>
+
+					<span id="by">By</span> <a href="" class="album-artist">Pritam, Sandesh Sandilya</a>
+					<span class="year-of-release">2007 . 10 Songs . 47 Minutes</span>
+
+					<div class="to-do-options">
+						<button type="button">Play</button>
+						<a href=""> <i class="far fa-heart"></i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+					</div>
+				</div>
+
+				<section id="selected-genre-song-list">
+
+					<div class="song-item-bar">
+						<div class="song-info">
+							<a class="counter">1.</a>
+							<a href="">Tum se hi - <span>Mohit Chauhan</span> </a>
+						</div>
+
+						<div class="other-options">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a>3:57</a>
+						</div>
+					</div>
+
+					<div class="song-item-bar">
+						<div class="song-info">
+							<a class="counter">2.</a>
+							<a href="">Aoge jab tum - <span>Rahid Khan</span></a>
+						</div>
+
+						<div class="other-options">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a>3:57</a>
+						</div>
+					</div>
+
+					<div class="song-item-bar">
+						<div class="song-info">
+							<a class="counter">3.</a>
+							<a href="">Nagada - <span>Sonu Nigam</span></a>
+						</div>
+
+						<div class="other-options">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a>3:57</a>
+						</div>
+					</div>
+
+					<div class="song-item-bar">
+						<div class="song-info">
+							<a class="counter">4.</a>
+							<a href="">Tum se hi (Remix) - <span>Mohit Chauhan</span></a>
+						</div>
+
+						<div class="other-options">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a>3:57</a>
+						</div>
+					</div>
+
+
+					<div class="song-item-bar">
+						<div class="song-info">
+							<a class="counter">5.</a>
+							<a href="">Aao milo chale - <span>Shaan</span></a>
+						</div>
+
+						<div class="other-options">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a>3:57</a>
+						</div>
+					</div>
+
+					<div class="song-item-bar">
+						<div class="song-info">
+							<a class="counter">6.</a>
+							<a href="">Aoge jab tum (unplugged) - <span>Rahid Khan</span></a>
+						</div>
+
+						<div class="other-options">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a>3:57</a>
+						</div>
+					</div>
+
+					<div class="song-item-bar">
+						<div class="song-info">
+							<a class="counter">7.</a>
+							<a href="">Mauja hi mauja - <span>Mika</span></a>
+						</div>
+
+						<div class="other-options">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a>3:57</a>
+						</div>
+					</div>
+
+					<div class="song-item-bar">
+						<div class="song-info">
+							<a class="counter">8.</a>
+							<a href="">Ye Ishq Haaye - <span>Shreya Ghosal</span></a>
+						</div>
+
+						<div class="other-options">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a>3:57</a>
+						</div>
+					</div>
+
+				</section>
+			</div>
+
+
+
+										<!-- Queue Section Starts from here  -->
+
+			<aside class="queue">
+				<span id="queue-heading">
+					<h3>Similar Artists</h3>
+					<p>Add to favourites</p>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">1</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Rockstar</h5>
+							<p class="singer-name">2011</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">2</span>
+						<span class="song-icon"><img src="latest released section/lr01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Love aj kal</h5>
+							<p class="singer-name">2009</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">3</span>
+						<span class="song-icon"><img src="latest released section/lr02.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">1920 - Evil</h5>
+							<p class="singer-name">2008</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">4</span>
+						<span class="song-icon"><img src="latest released section/lr03.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Bhoothnath</h5>
+							<p class="singer-name">2010</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span id="queue-heading">
+					<h3>Suggestions for you</h3>
+					<p>Add to favourites</p>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">5</span>
+						<span class="song-icon"><img src="latest released section/lr04.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">6</span>
+						<span class="song-icon"><img src="latest released section/lr05.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">7</span>
+						<span class="song-icon"><img src="latest released section/lr06.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">8</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">9</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">10</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">11</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">12</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">13</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+			</aside>
+
+		</div>
+
+	</main>
+
+</body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jelly Player</title>
+
+	<link rel="stylesheet" type="text/css" href="jelly.css">
+	<meta charset="utf-8" name="author" content="Aakash Srivastava">
+	<meta charset="utf-8" name="keywords" content="music player, music, online music, jelly player">
+	<meta name="viewport" content="width=device-width initial-scale:1">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+
+</head>
+<body>
+
+								<!-- This is the section of music player that will be 90vh from top fixed on screen.-->
+
+	<section id="music-player-section">
+
+			<span id="song-thumbnail">
+
+				<img src="cover/att.jpeg">
+				<ul style="list-style: none;">
+					<li class="current-song-name"><a href="">Attention</a></li>
+					<li class="current-singer"><a href="">Charlie puth</a></li>
+				</ul>
+				<i class="far fa-heart"> </i>
+
+			</span>
+
+			<span id="media-controls">
+				<div id="controls">
+					<a href=""><i class="fas fa-random"></i></a>
+					<a href=""><i class="fas fa-step-backward"></i></a>
+					<a href=""><i class="far fa-play-circle"></i></a>
+					<a href=""><i class="fas fa-step-forward"></i></a>
+					<a href=""><i class="fas fa-redo"></i></a>
+				</div>
+
+				<div id="progress-bar"></div>
+			</span>
+
+			<span id="other-utilities">
+				<a href=""><i class="fas fa-server"></i></a>
+				<a href=""><i class="fas fa-desktop"></i></a>
+				<a href=""><i class="fas fa-volume-up"></i> </a>
+				<span id="volume-bar"></span>
+			</span>
+			
+	</section>
+
+	<main class="application-box">
+
+		
+		<!-- Our very first target will be to make a navbar as a flex-display containing two divisions one for logo and Favourites and another for search bar and etc . Both will be
+		space-between justified ! -->
+
+		<nav class="navbar">
+
+			<div class="navbar-left-portion">
+
+				<ul class="left-list">
+
+					<li><i class="fas fa-headphones-alt logo"></i></li>
+					<li><a href="#favourites"> Favourites </a></li>
+					
+				</ul>
+				
+			</div>
+
+			<div class="navbar-right-portion">
+
+				<ul class="right-list">
+					<li>
+						<form method="POST" name="search-query">
+
+							<div class="search-division">
+
+								<i class="fas fa-search"></i>
+								<input type="text" name="name" id="music-search" placeholder="Search Music">
+								<i class="fas fa-microphone"></i>
+								
+							</div>
+
+						</form>
+					</li>
+
+					<!-- <li><input type="text" name="name" id="music-search" placeholder="Search Music"></li> -->
+					<li><i class="fa fa-bell"></i></li>
+					<li><img src="images/profile.jpg"></li>
+
+				</ul>
+				
+			</div>
+
+		</nav>
+
+		<!-- Now the turn is for music section and aside Queue section both will be in a div which will be flex overall so that we can handle them easily -->
+
+		<div class="music-timeline">
+			
+			<div class="head-timeline">
+
+				<span class="profile-animation">
+					<div class="face one"></div>
+					<div class="face two"></div>
+					<div class="face three"></div>
+				</span>
+
+				<!-- recently played section -->
+
+				<div class="recently-played">
+
+					<h2 id="recently-played-heading">Recently Played <i class="fas fa-chevron-right"></i> </h2>
+
+					<div class="recently-played-cards">
+
+						<img src="cover/att.jpeg" class="image">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href=""> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+
+						<ul style="list-style: none;">
+							<li><a href="">Attention</a></li>
+							<li><p style="font-size: x-small;">Charlie Puth</p></li>
+						</ul>
+
+					</div>
+
+					<div class="recently-played-cards">
+
+						<img src="song covers/jabwemet.jpg" class="image">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href="jabwemet.html"> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+
+						<ul style="list-style: none;">
+							<li><a href="">Jab we met</a></li>
+							<li><p style="font-size: x-small;">Pritam</p></li>
+						</ul>
+
+					</div>
+
+					<div class="recently-played-cards">
+
+						<img src="cover/kabirsingh.png" class="image">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href=""> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+
+						<ul style="list-style: none;">
+							<li><a href="">Bekhayali</a></li>
+							<li><p style="font-size: x-small;">Kabir Singh</p></li>
+						</ul>
+
+					</div>
+
+					<div class="recently-played-cards">
+
+						<img src="cover/jb.jpg" class="image">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href=""> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+
+						<ul style="list-style: none;">
+							<li><a href="">Sorry</a></li>
+							<li><p style="font-size: x-small;">Justin Beiber</p></li>
+						</ul>
+
+					</div>
+
+					<div class="recently-played-cards">
+
+						<img src="cover/kabirsingh.png" class="image">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href=""> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+
+						<ul style="list-style: none;">
+							<li><a href="">Tujhe Kitna</a></li>
+							<li><p style="font-size: x-small;">2019</p></li>
+						</ul>
+
+					</div>
+
+					<div class="recently-played-cards">
+
+						<img src="cover/att.jpeg" class="image">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href=""> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+
+						<ul style="list-style: none;">
+							<li><a href="">Charlie Puth</a></li>
+							<li><p style="font-size: x-small;">2018</p></li>
+						</ul>
+
+					</div>
+					
+				</div>
+
+				<div class="made-for-you">
+
+					<!-- <h2 id="recently-played-heading"> Made for you <i class="fas fa-chevron-right"></i> </h2> -->
+					
+					<div class="made-for-you-container">
+						<img src="" class="md01">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href=""> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+					</div>
+
+					<div class="made-for-you-container">
+						<img src="" class="md02">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href=""> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+					</div>
+
+					<div class="made-for-you-container">
+						<img src="" class="md03">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href=""> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+					</div>
+
+					<div class="made-for-you-container">
+						<img src="" class="md04">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href=""> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+					</div>
+
+					<div class="made-for-you-container">
+						<img src="" class="md05">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href=""> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+					</div>
+
+					<div class="made-for-you-container">
+						<img src="" class="md06">
+						<div class="overlay">
+							<a href=""> <i class="far fa-heart"></i> </a>
+							<a href=""> <i class="fas fa-play"></i> </a>
+							<a href=""> <i class="fas fa-ellipsis-h"></i> </a>
+						</div>
+					</div>
+
+				</div>
+
+
+
+																<!-- Queue Section Starts from here  -->
+
+			</div>
+
+			<aside class="queue">
+				<span id="queue-heading">
+					<h3>Queue</h3>
+					<p>Add to favourites</p>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">1</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">2</span>
+						<span class="song-icon"><img src="latest released section/lr01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">3</span>
+						<span class="song-icon"><img src="latest released section/lr02.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">4</span>
+						<span class="song-icon"><img src="latest released section/lr03.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">5</span>
+						<span class="song-icon"><img src="latest released section/lr04.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">6</span>
+						<span class="song-icon"><img src="latest released section/lr05.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">7</span>
+						<span class="song-icon"><img src="latest released section/lr06.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">8</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">9</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">10</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">11</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">12</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+				<span class="queue-item">
+
+					<div class="song-details">
+
+						<span class="count">13</span>
+						<span class="song-icon"><img src="queue-thumbnails/qitem01.png" height="50px" width="50px"></span>
+						
+						<span class="info">
+							<h5 class="song-name">Mentis</h5>
+							<p class="singer-name">Seil</p>
+						</span>
+					</div>
+
+					<i class="far fa-heart"></i>
+				</span>
+
+			</aside>
+
+		</div>
+
+		<!-- This is the genre section where songs are categorized in different moods genres artists and albums languages latest releases and etc . -->
+
+		<section class="playlist">
+
+			<h2 class="heading" id="popular-heading">Popular Artists</h2>
+
+				<section class="popular-artists playlist-section">
+
+					<span class="artist-card">
+						<img src="" id="pa01">
+						<div class="overlay">
+							<a href=""> <i class="fas fa-play"></i> </a>
+						</div>
+						<a href="#coldplay" class="pa-name"> Coldplay </a>
+					</span>
+
+					<span class="artist-card">
+						<img src="" id="pa02">
+						<div class="overlay">
+							<a href=""> <i class="fas fa-play"></i> </a>
+						</div>
+						<a href="#coldplay" class="pa-name"> Armaan Malik </a>
+					</span>
+
+					<span class="artist-card">
+						<img src="" id="pa03">
+						<div class="overlay">
+							<a href=""> <i class="fas fa-play"></i> </a>
+						</div>
+						<a href="#coldplay" class="pa-name"> Charlie Puth </a>
+					</span>
+
+					<span class="artist-card">
+						<img src="" id="pa04">
+						<div class="overlay">
+							<a href=""> <i class="fas fa-play"></i> </a>
+						</div>
+						<a href="#coldplay" class="pa-name"> Sonu Nigam </a>
+					</span>
+
+					<span class="artist-card">
+						<img src="" id="pa05">
+						<div class="overlay">
+							<a href=""> <i class="fas fa-play"></i> </a>
+						</div>
+						<a href="#coldplay" class="pa-name"> Zayn Malik </a>
+					</span>
+
+
+				</section>
+				
+
+			<div class="playlist-section">
+
+				<span class="music-mood" id="party-mood">
+					<a href="">Party</a>
+				</span>
+				<span class="music-mood" id="electric-mood">
+					<a href="">Electronic</a>
+				</span>
+				<span class="music-mood" id="roadtrip-mood">
+					<a href="">Roadtrip</a>
+				</span>
+
+			</div>
+
+			<h2 class="heading">Latest English release</h2>
+
+			<div class="playlist-section">
+
+				<span class="latest-card">
+					<img src="latest released section/lr01.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+
+				<span class="latest-card">
+					<img src="latest released section/lr02.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+
+				<span class="latest-card">
+					<img src="latest released section/lr03.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+
+				<span class="latest-card">
+					<img src="latest released section/lr04.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+
+				<span class="latest-card">
+					<img src="latest released section/lr05.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+
+				<span class="latest-card">
+					<img src="latest released section/lr06.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+
+			</div>
+
+			<h2 class="heading">Latest Hindi release</h2>
+
+			<div class="playlist-section">
+
+				<span class="latest-card">
+					<img src="latest released section/lr01.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+
+				<span class="latest-card">
+					<img src="latest released section/lr04.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+
+				<span class="latest-card">
+					<img src="latest released section/lr02.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+
+				<span class="latest-card">
+					<img src="latest released section/lr06.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+
+				<span class="latest-card">
+					<img src="latest released section/lr05.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+
+				<span class="latest-card">
+
+					<img src="latest released section/lr03.png">
+					<div class="overlay">
+						<a href=""> <i class="far fa-heart"> </i> </a>
+						<a href=""> <i class="fas fa-play"> </i> </a>
+						<a href=""> <i class="fas fa-ellipsis-h"> </i> </a>
+					</div>
+					<ul>
+						<li> <strong>Onism </strong> </li>
+						<li class="date">Nov 12, 2018</li>
+					</ul>
+				</span>
+			</div>
+			
+		</section>
+		
+	</main>
+
+</body>
+</html>
